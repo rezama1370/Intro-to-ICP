@@ -21,7 +21,7 @@ Eigen::Matrix4d ICP(PointCloudT::Ptr target, PointCloudT::Ptr source, Pose start
 															   startingPose.position.x,
 															   startingPose.position.y);
 	PointCloudT::Ptr transformSource(new PointCloudT);
-	pcl::transformPointCloud(*source, *transformSource, initTransform);
+	pcl::transformPointCloud(*source, *transformSource, transformation_matrix);
 	//  //////////////////////////////////////////////////////////////////
 	pcl::console::TicToc time;
 	time.tic();
