@@ -36,7 +36,7 @@ Eigen::Matrix4d ICP(PointCloudT::Ptr target, PointCloudT::Ptr source, Pose start
 	{
 		std::cout << "\nICP has converged, score is " << icp.getFitnessScore() << std::endl;
 		transformation_matrix = icp.getFinalTransformation().cast<double>();
-		transformation_matrix = transformation_matrix * initTransform;
+		transformation_matrix = transformation_matrix * TransformMatrix_startingPose;
 		return transformation_matrix;
 	}
 	cout << "WARNING: ICP did not converge" << endl;
